@@ -1,0 +1,28 @@
+---
+import { messages, type LocaleProps } from '../../i18n';
+import { kickerClass, largeSectionHeadingClass } from '../../styles/classes';
+interface Props extends LocaleProps {}
+const t = messages[Astro.props.locale].education;
+const courses = [
+  { status: t.ongoing, title: t.degree, source: t.university },
+  { status: t.continuous, title: t.course, source: t.sources },
+];
+---
+<!-- Formacion academica y aprendizaje continuo. -->
+<section class="grid grid-cols-[minmax(300px,0.9fr)_minmax(0,1.1fr)] gap-20 bg-brand-lilac px-[max(7vw,40px)] py-[115px] max-[760px]:grid-cols-1 max-[760px]:px-6 max-[760px]:py-20" aria-labelledby="education-title">
+  <div data-reveal>
+    <p class={kickerClass}>{t.label}</p>
+    <h2 class={largeSectionHeadingClass} id="education-title">
+      {t.learn}<br /><span class="inline-block bg-ink px-[0.12em] py-[0.04em] text-white">{t.apply}</span><br />{t.evolve}
+    </h2>
+  </div>
+  <div class="border-t-2 border-ink" data-reveal>
+    {courses.map((course) => (
+      <article class="border-b border-ink/35 py-8">
+        <span class="font-display text-[13px] font-bold tracking-[2px] uppercase">{course.status}</span>
+        <h3 class="mt-2.5 mb-1.5 font-display text-[clamp(28px,3vw,42px)] leading-none">{course.title}</h3>
+        <p class="m-0">{course.source}</p>
+      </article>
+    ))}
+  </div>
+</section>

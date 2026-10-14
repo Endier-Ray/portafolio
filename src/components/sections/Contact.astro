@@ -1,0 +1,24 @@
+---
+import { messages, type LocaleProps } from '../../i18n';
+import { kickerClass, sectionHeadingClass, buttonClass } from '../../styles/classes';
+import ArrowIcon from '../ui/ArrowIcon.astro';
+import SocialLinks from '../ui/SocialLinks.astro';
+interface Props extends LocaleProps {}
+const t = messages[Astro.props.locale].contact;
+---
+<section class="grid min-h-[570px] grid-cols-[minmax(0,2.4fr)_minmax(280px,0.8fr)] bg-brand-coral max-[760px]:grid-cols-1" id="contacto">
+  <div class="min-w-0 px-[max(7vw,40px)] py-[100px] text-left max-[760px]:px-6 max-[760px]:py-20" data-reveal>
+    <p class={kickerClass}>{t.label}</p>
+    <h2 class={`${sectionHeadingClass} max-w-[950px] text-[clamp(60px,7.3vw,112px)] leading-[0.84] max-[760px]:text-[51px]`}>
+      {t.heading}<span class="block w-fit bg-ink px-[0.12em] py-[0.04em] text-white">{t.works}</span>
+    </h2>
+    <div class="mt-[45px] flex flex-wrap items-center gap-x-8 gap-y-5">
+      <a class={`${buttonClass} bg-ink text-white`} href="mailto:ramoncejadst@gmail.com">{t.email}<ArrowIcon /></a>
+      <SocialLinks locale={Astro.props.locale} />
+      <a class="text-link border-b-2 border-current px-0 pt-2.5 pb-1.5 font-display font-bold tracking-[1px] uppercase" href="#experiencia">{t.experience}</a>
+    </div>
+  </div>
+  <div class="flex flex-col justify-end bg-brand-lilac px-[50px] py-20 text-ink max-[760px]:min-h-[280px] max-[760px]:px-6 max-[760px]:py-[45px]" data-reveal>
+    <p class="max-w-80 text-[19px] leading-[1.6]">{t.description}</p>
+  </div>
+</section>

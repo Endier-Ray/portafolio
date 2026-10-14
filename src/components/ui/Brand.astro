@@ -1,0 +1,19 @@
+---
+interface Props { label: string; header?: boolean }
+const { label, header = false } = Astro.props;
+---
+<a
+  class:list={[
+    'flex shrink-0 items-center gap-3.5 font-display',
+    header ? 'w-[245px] border-r border-white/10 px-7 max-[760px]:w-auto max-[760px]:px-[18px]' : 'w-auto',
+  ]}
+  href="#inicio" aria-label={label}
+>
+  <span class:list={[
+    'grid place-items-center rounded-full border-2 border-white text-[15px] font-bold',
+    header ? 'size-12 max-[760px]:size-10' : 'size-[42px]',
+  ]}>&lt;/&gt;</span>
+  <span class:list={['flex flex-col text-[21px] leading-[0.9] font-semibold tracking-[2px]', { 'max-[760px]:text-base': header }]}>
+    RAY <strong class:list={['text-[27px]', { 'max-[760px]:text-[21px]': header }]}>CEJA</strong>
+  </span>
+</a>

@@ -1,0 +1,27 @@
+---
+import { messages, type LocaleProps } from '../../i18n';
+import { kickerClass, largeSectionHeadingClass, tagClass } from '../../styles/classes';
+interface Props extends LocaleProps {}
+const t = messages[Astro.props.locale].experience;
+---
+<!-- Trayectoria profesional independiente de proyectos y formacion. -->
+<section class="grid grid-cols-[minmax(280px,0.7fr)_minmax(0,1.3fr)] gap-[70px] bg-brand-cyan px-[max(6vw,40px)] py-[110px] max-[1050px]:grid-cols-1 max-[760px]:px-6 max-[760px]:py-20" id="experiencia">
+  <div data-reveal>
+    <p class={kickerClass}>{t.label}</p>
+    <h2 class={largeSectionHeadingClass}>{t.heading}</h2>
+  </div>
+  <article class="grid grid-cols-[180px_1fr] border-t-2 border-ink max-[760px]:grid-cols-1" data-reveal>
+    <div class="flex flex-col gap-2 border-r border-ink/25 pt-[30px] pr-7 font-display uppercase max-[760px]:border-r-0 max-[760px]:border-b max-[760px]:border-ink/25 max-[760px]:pb-6">
+      <span class="text-[13px] font-bold tracking-[2px] uppercase">{t.current}</span>
+      <strong class="text-[22px]">DesignsGDL</strong>
+    </div>
+    <div class="pt-[30px] pl-[38px] max-[760px]:pl-0">
+      <p class="text-[13px] font-bold tracking-[2px] uppercase">{t.role}</p>
+      <h3 class="mt-2.5 mb-[22px] max-w-[700px] font-display text-[clamp(34px,4vw,54px)] leading-none">{t.title}</h3>
+      <p class="max-w-[700px] leading-[1.7]">{t.description}</p>
+      <ul class="mt-[30px] flex list-none flex-wrap gap-2 p-0" aria-label={t.responsibilities}>
+        {[t.fullstack, t.ui, t.operations].map((item) => <li class={tagClass}>{item}</li>)}
+      </ul>
+    </div>
+  </article>
+</section>

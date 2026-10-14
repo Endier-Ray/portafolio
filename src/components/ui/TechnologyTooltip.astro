@@ -1,0 +1,23 @@
+---
+import type { LocaleProps } from '../../i18n';
+import type { Technology } from '../../data/skills';
+import { tooltips } from '../../data/tooltips';
+import { tagClass } from '../../styles/classes';
+import '../../styles/tooltips.css';
+interface Props extends LocaleProps { item: Technology; id: string }
+const { locale, item, id } = Astro.props;
+---
+<!-- El nombre es enfocable y la descripcion se enlaza para lectores de pantalla. -->
+<li class={`${tagClass} technology-item relative inline-flex min-h-[38px] cursor-help items-center gap-2 bg-white/50 px-[11px] py-[7px] text-xs`}
+  tabindex="0" aria-describedby={id}>
+  {item.icon && (
+    <img class:list={{ 'technology-icon-monochrome': item.name === 'Visual Studio' }}
+      src={item.icon.startsWith('https://') ? item.icon : `https://cdn.simpleicons.org/${item.icon}/111514`}
+      alt="" width="20" height="20" loading="lazy" />
+  )}
+  <span>{item.name}</span>
+  <span class="technology-tooltip" id={id} role="tooltip">{tooltips[locale][item.name]}</span>
+</li>
+<script>
+  import '../../scripts/tooltips';
+</script>

@@ -1,0 +1,15 @@
+---
+import { messages, type LocaleProps } from '../i18n';
+import Brand from './ui/Brand.astro';
+import SocialLinks from './ui/SocialLinks.astro';
+interface Props extends LocaleProps {}
+const t = messages[Astro.props.locale].footer;
+---
+<footer class="grid min-h-[150px] grid-cols-3 items-center bg-ink px-[5vw] py-[30px] text-white max-[760px]:grid-cols-1 max-[760px]:gap-[35px] max-[760px]:px-6 max-[760px]:py-[50px]">
+  <Brand label={t.home} />
+  <p class="text-center text-[13px] text-muted max-[760px]:text-left">{t.copyright}</p>
+  <div class="flex flex-wrap items-center justify-end gap-4 font-display text-[13px] font-bold tracking-[1px] uppercase max-[760px]:justify-start">
+    <SocialLinks locale={Astro.props.locale} />
+    <a class="text-link inline-flex min-h-11 items-center" href="#inicio">{t.start}</a>
+  </div>
+</footer>

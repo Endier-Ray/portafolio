@@ -1,0 +1,15 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { locales, messages, type LocaleProps } from '../../i18n';
+interface Props extends LocaleProps {}
+const { locale } = Astro.props;
+---
+<div class="language-switcher" role="group" aria-label={messages[locale].nav.language}>
+  {locales.map((language) => (
+    <a href={getRelativeLocaleUrl(language)} lang={language} hreflang={language}
+      data-language-link aria-current={language === locale ? 'page' : undefined}
+      aria-label={language === 'es' ? 'Español' : 'English'}>
+      {language.toUpperCase()}
+    </a>
+  ))}
+</div>

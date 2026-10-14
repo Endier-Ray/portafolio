@@ -1,0 +1,20 @@
+---
+import { socialLinks } from '../../data/socials';
+import { messages, type LocaleProps } from '../../i18n';
+import SocialIcon from './SocialIcon.astro';
+
+interface Props extends LocaleProps { iconsOnly?: boolean }
+const { locale, iconsOnly = false } = Astro.props;
+const t = messages[locale].social;
+---
+<div class="flex flex-wrap items-center gap-3">
+  {socialLinks.map((social) => (
+    <a class:list={[
+      'action-button inline-flex min-h-11 min-w-11 items-center justify-center gap-2 border border-current p-3 font-display text-sm font-bold',
+      { 'px-4': !iconsOnly },
+    ]} href={social.url} target="_blank" rel="noopener noreferrer" aria-label={t[social.id]}>
+      <SocialIcon platform={social.id} />
+      {!iconsOnly && <span>{social.name}</span>}
+    </a>
+  ))}
+</div>

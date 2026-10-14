@@ -1,0 +1,28 @@
+---
+import Brand from './ui/Brand.astro';
+import LanguageSwitcher from './ui/LanguageSwitcher.astro';
+import { messages, type LocaleProps } from '../i18n';
+import { navigation } from '../data/navigation';
+import '../styles/navigation.css';
+interface Props extends LocaleProps {}
+const { locale } = Astro.props;
+const t = messages[locale].nav;
+---
+<!-- Navegacion semantica; el script mejora el menu sin requerir React. -->
+<header data-navigation class="site-header fixed top-[22px] left-1/2 z-30 flex h-[68px] w-[min(1320px,calc(100%_-_48px))] -translate-x-1/2 items-stretch bg-ink text-white shadow-[0_14px_40px_rgb(0_0_0/18%)] max-[1050px]:top-0 max-[1050px]:w-full">
+  <Brand label={t.home} header />
+  <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-navigation"
+    aria-label={t.open} data-open-label={t.open} data-close-label={t.close}>
+    <span></span><span></span>
+  </button>
+  <nav id="main-navigation" class="main-nav" aria-label={t.label}>
+    {navigation.map((item) => (
+      <a class:list={{ 'nav-highlight': item.key === 'contact' }}
+        href={`#${item.id}`} data-section-link>{t[item.key]}</a>
+    ))}
+    <LanguageSwitcher locale={locale} />
+  </nav>
+</header>
+<script>
+  import '../scripts/navigation';
+</script>

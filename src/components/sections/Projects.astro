@@ -1,0 +1,21 @@
+---
+import { projects } from '../../data/projects';
+import { messages, type LocaleProps } from '../../i18n';
+import { kickerClass, sectionHeadingClass } from '../../styles/classes';
+import ProjectCard from '../ProjectCard.astro';
+interface Props extends LocaleProps {}
+const { locale } = Astro.props;
+const t = messages[locale].projects;
+---
+<!-- Catalogo separado de la presentacion de cada tarjeta. -->
+<section class="bg-ink px-10 pt-[115px] pb-[130px] text-white max-[760px]:px-6 max-[760px]:py-20" id="proyectos">
+  <div class="mx-auto mb-[75px] flex w-[min(1100px,100%)] flex-col items-start justify-center text-left max-[760px]:gap-5" data-reveal>
+    <p class={`${kickerClass} text-muted`}>{t.label}</p>
+    <h2 class={`${sectionHeadingClass} text-left text-[clamp(60px,7.5vw,115px)] leading-[0.84] max-[760px]:w-full max-[760px]:text-[54px]`}>
+      {t.heading}<br /><span class="text-brand-lilac">{t.impact}</span>
+    </h2>
+  </div>
+  <div class="projects mx-auto grid w-[min(1180px,100%)] gap-0.5">
+    {projects.map((project) => <ProjectCard project={project} locale={locale} />)}
+  </div>
+</section>

@@ -1,0 +1,18 @@
+---
+import type { SkillGroup } from '../data/skills';
+import type { LocaleProps } from '../i18n';
+import TechnologyTooltip from './ui/TechnologyTooltip.astro';
+interface Props extends LocaleProps { group: SkillGroup }
+const { locale, group } = Astro.props;
+const copy = group.copy[locale];
+---
+<article class={`skill-card relative min-h-[360px] border border-[#cbc9c4] bg-white/40 p-[38px] text-left before:absolute before:inset-x-0 before:top-0 before:h-[7px] before:content-[''] max-[760px]:min-h-0 max-[760px]:px-6 max-[760px]:py-8 ${group.accent}`} data-reveal>
+  <span class="font-display text-sm font-bold tracking-[2px]">{group.number}</span>
+  <h3 class="mt-9 mb-3.5 font-display text-[34px] max-[760px]:mt-7 max-[760px]:mb-2">{copy.title}</h3>
+  <p class="mx-0 max-w-[350px] leading-[1.65] text-[#565955]">{copy.description}</p>
+  <ul class="technology-list mt-[25px] flex list-none flex-wrap gap-[7px] p-0">
+    {group.items.map((item, index) => (
+      <TechnologyTooltip item={item} id={`technology-${group.number}-${index}`} locale={locale} />
+    ))}
+  </ul>
+</article>

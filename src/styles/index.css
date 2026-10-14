@@ -1,1 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap");
 @import "tailwindcss";
+@import "./animations.css";
+@import "./interactions.css";
+
+/* Tokens y reglas base; estilos especificos se importan desde cada modulo. */
+@theme {
+  --color-ink: #111514;
+  --color-paper: #f4f2ed;
+  --color-brand-blue: #5078f2;
+  --color-brand-lilac: #ad8af5;
+  --color-brand-cyan: #66d4e5;
+  --color-brand-coral: #ff7185;
+  --color-muted: #a8aaa7;
+  --font-display: "Rajdhani", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+:root {
+  --ink: var(--color-ink);
+  --paper: var(--color-paper);
+  --blue: var(--color-brand-blue);
+  --lilac: var(--color-brand-lilac);
+  --cyan: var(--color-brand-cyan);
+  --coral: var(--color-brand-coral);
+  --ease-soft: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --duration-hover: 280ms;
+  --duration-reveal: 850ms;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); }
+body:has(.main-nav.is-open) { overflow: hidden; }
+section { scroll-margin-top: 96px; }
+/* La herencia base no debe sobrescribir los colores de las utilidades Tailwind. */
+@layer base {
+  a { color: inherit; text-decoration: none; }
+}
+a:focus-visible, button:focus-visible, .technology-item:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 7px var(--ink);
+}
+svg {
+  width: 1.4em;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+/* Las traducciones y titulos largos deben caber incluso en pantallas estrechas. */
+h1, h2, h3, .project-short-title { overflow-wrap: anywhere; }

@@ -1,0 +1,25 @@
+/* El contenido solo se oculta si el observador pudo inicializarse. */
+.reveal-ready [data-reveal] {
+  opacity: 0;
+  animation: section-reveal var(--duration-reveal) var(--ease-soft) both paused;
+}
+.reveal-ready [data-reveal].is-visible { animation-play-state: running; }
+
+/* Solo opacidad: revelar una tarjeta no compite con su estado hover ni mueve texto. */
+@keyframes section-reveal { from { opacity: 0; } to { opacity: 1; } }
+@keyframes hero-breathe { from { transform: scale(1); } to { transform: scale(1.02); } }
+@keyframes hero-copy-in { to { opacity: 1; transform: translateY(0); } }
+@keyframes float-vertical { from { transform: translateY(-3px); } to { transform: translateY(3px); } }
+@keyframes float-horizontal { from { transform: translateX(-3px); } to { transform: translateX(3px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-ready [data-reveal], .hero-reveal > * { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .hero-photo, .shape { animation: none !important; }
+  .action-arrow { transform: none !important; }
+}

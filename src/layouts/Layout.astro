@@ -1,23 +1,28 @@
 ---
 import "../styles/index.css";
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { locales, messages, type LocaleProps } from '../i18n';
+interface Props extends LocaleProps {}
+const { locale } = Astro.props;
+const t = messages[locale].meta;
 ---
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={t.description} />
+		{locales.map((language) => (
+			<link rel="alternate" hreflang={language} href={getRelativeLocaleUrl(language)} />
+		))}
+		<title>{t.title}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-	}
-</style>
+<script>
+	import '../scripts/reveal';
+</script>

@@ -1,0 +1,20 @@
+---
+import { skillGroups } from '../../data/skills';
+import { messages, type LocaleProps } from '../../i18n';
+import { kickerClass, largeSectionHeadingClass } from '../../styles/classes';
+import SkillCard from '../SkillCard.astro';
+interface Props extends LocaleProps {}
+const { locale } = Astro.props;
+const t = messages[locale].skills;
+---
+<!-- Skills y sus descripciones se editan en data, no en esta plantilla. -->
+<section class="mx-auto max-w-[1240px] px-10 pt-[120px] pb-[130px] text-left max-[760px]:px-6 max-[760px]:py-20" id="stack">
+  <p class={kickerClass}>{t.label}</p>
+  <div class="mb-[85px] flex flex-col items-start max-[760px]:gap-[45px]" data-reveal>
+    <h2 class={largeSectionHeadingClass}>{t.heading}<br />{t.layers}</h2>
+    <p class="mt-[35px] max-w-[480px] text-xl leading-[1.6]">{t.description}</p>
+  </div>
+  <div class="skill-grid grid grid-cols-2 gap-3 max-[760px]:grid-cols-1">
+    {skillGroups.map((group) => <SkillCard group={group} locale={locale} />)}
+  </div>
+</section>

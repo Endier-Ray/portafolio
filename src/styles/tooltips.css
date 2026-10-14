@@ -1,0 +1,62 @@
+/* Tooltip accesible por hover, teclado y enfoque tactil. */
+.technology-tooltip {
+  position: absolute;
+  display: none;
+  z-index: 10;
+  bottom: calc(100% + 12px);
+  left: calc(50% + var(--tooltip-shift, 0px));
+  width: min(250px, calc(100vw - 48px));
+  padding: 12px 14px;
+  background: var(--ink);
+  box-shadow: 4px 4px 0 var(--blue);
+  color: white;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.45;
+  opacity: 0;
+  pointer-events: none;
+  text-transform: none;
+  transform: translate(-50%, 3px);
+  transition: opacity var(--duration-hover) var(--ease-soft),
+    transform var(--duration-hover) var(--ease-soft),
+    display var(--duration-hover) allow-discrete,
+    visibility var(--duration-hover) var(--ease-soft);
+  visibility: hidden;
+}
+.technology-tooltip::after {
+  position: absolute;
+  top: 100%;
+  left: calc(50% - var(--tooltip-shift, 0px));
+  border: 7px solid transparent;
+  border-top-color: var(--ink);
+  content: "";
+  transform: translateX(-50%);
+}
+/* Puente para mover el puntero del nombre al tooltip sin que desaparezca. */
+.technology-tooltip::before { position: absolute; top: 100%; left: 0; width: 100%; height: 14px; content: ""; }
+.technology-item:not(.tooltip-dismissed):is(:hover, :focus-visible, :focus-within) .technology-tooltip {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+  visibility: visible;
+}
+.technology-item { transition: background-color var(--duration-hover) var(--ease-soft), color var(--duration-hover) var(--ease-soft); }
+.technology-item:focus-visible { background-color: var(--ink); color: white; }
+.technology-list img { width: 20px; height: 20px; flex: none; transition: filter var(--duration-hover) var(--ease-soft); }
+.technology-list .technology-icon-monochrome { filter: grayscale(1) brightness(0); }
+.technology-item:focus-visible img { filter: invert(1); }
+@media (hover: hover) and (pointer: fine) {
+  .technology-item:hover { background-color: var(--ink); color: white; }
+  .technology-item:hover img { filter: invert(1); }
+}
+
+/* Permite entrada suave desde display:none sin dejar cajas ocultas que desborden. */
+@starting-style {
+  .technology-item:not(.tooltip-dismissed):is(:hover, :focus-visible, :focus-within) .technology-tooltip {
+    opacity: 0;
+    transform: translate(-50%, 3px);
+  }
+}
