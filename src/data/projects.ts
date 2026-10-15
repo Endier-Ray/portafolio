@@ -37,23 +37,6 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 'oz-leasing', number: '02', color: 'bg-brand-lilac',
-    url: 'https://clickanddrive.ozleasing.mx/',
-    tech: ['Vue.js', 'TypeScript', 'REST APIs', 'PDF generation'],
-    copy: {
-      es: {
-        title: 'OZ Leasing (Click & Drive)', shortTitle: 'OZ Leasing',
-        type: 'Plataforma financiera', role: 'Frontend y backend integration',
-        description: 'Interfaces interactivas, cotizadores en tiempo real, conexión con APIs externas y generación automatizada de documentos para contratos de arrendamiento.',
-      },
-      en: {
-        title: 'OZ Leasing (Click & Drive)', shortTitle: 'OZ Leasing',
-        type: 'Financial platform', role: 'Frontend and backend integration',
-        description: 'Interactive interfaces, real-time quotes, external API integration and automated document generation for leasing agreements.',
-      },
-    },
-  },
-  {
     id: 'pass-generator', number: '03', color: 'bg-brand-cyan',
     url: 'https://password.raydev.com.mx/',
     practice: true,
