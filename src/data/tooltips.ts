@@ -36,6 +36,8 @@ const es = {
   GitHub: 'Plataforma para alojar código, colaborar y automatizar flujos de desarrollo.',
   Docker: 'Plataforma para empaquetar aplicaciones y ejecutarlas en contenedores.',
   'Visual Studio': 'Entorno de desarrollo integrado para crear y depurar aplicaciones.',
+  'GitHub Copilot': 'Asistente de IA para apoyar la escritura de código y documentación, con revisión y validación propias.',
+  Gemini: 'Asistente de IA de Google para explorar soluciones y apoyar el desarrollo, verificando sus respuestas antes de aplicarlas.',
 };
 
 export type TechnologyName = keyof typeof es;
@@ -76,6 +78,8 @@ const en: Record<TechnologyName, string> = {
   GitHub: 'Platform for hosting code, collaborating and automating development workflows.',
   Docker: 'Platform for packaging applications and running them in containers.',
   'Visual Studio': 'Integrated development environment for building and debugging applications.',
+  'GitHub Copilot': 'AI assistant for coding and documentation, with my own review and validation.',
+  Gemini: 'Google AI assistant for exploring solutions and supporting development, with responses verified before use.',
 };
 
 // El tipado obliga a describir cada tecnologia en los dos idiomas.

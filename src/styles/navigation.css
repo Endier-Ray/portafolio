@@ -48,8 +48,7 @@
     pointer-events: none;
     transform: translateY(-6px);
     transition: opacity var(--duration-hover) var(--ease-soft),
-      transform var(--duration-hover) var(--ease-soft),
-      visibility var(--duration-hover) var(--ease-soft);
+      transform var(--duration-hover) var(--ease-soft);
     width: min(420px, 100%);
     height: calc(100dvh - 68px);
     overflow-y: auto;

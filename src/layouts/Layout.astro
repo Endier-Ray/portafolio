@@ -1,6 +1,8 @@
 ---
 import "../styles/index.css";
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
+import interFont from '../styles/fonts/Inter.woff2?url';
+import rajdhaniFont from '../styles/fonts/Rajdhani.woff2?url';
 import { locales, messages, type LocaleProps } from '../i18n';
 interface Props extends LocaleProps {}
 const { locale } = Astro.props;
@@ -11,11 +13,14 @@ const t = messages[locale].meta;
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
+		<script is:inline>document.documentElement.classList.add('nav-ready');</script>
+		<link rel="preload" href={interFont} as="font" type="font/woff2" crossorigin />
+		<link rel="preload" href={rajdhaniFont} as="font" type="font/woff2" crossorigin />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={t.description} />
 		{locales.map((language) => (
-			<link rel="alternate" hreflang={language} href={getRelativeLocaleUrl(language)} />
+			<link rel="alternate" hreflang={language} href={getAbsoluteLocaleUrl(language)} />
 		))}
 		<title>{t.title}</title>
 	</head>

@@ -9,6 +9,8 @@ interface ProjectCopy {
 }
 export interface Project {
   id: string;
+  url: string;
+  practice?: boolean;
   number: string;
   color: string;
   tech: string[];
@@ -19,6 +21,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'ficg', number: '01', color: 'bg-brand-blue',
+    url: 'https://ficg.mx/',
     tech: ['PHP', 'WordPress', 'Tailwind CSS', 'Asset optimization'],
     copy: {
       es: {
@@ -35,6 +38,7 @@ export const projects: Project[] = [
   },
   {
     id: 'oz-leasing', number: '02', color: 'bg-brand-lilac',
+    url: 'https://clickanddrive.ozleasing.mx/',
     tech: ['Vue.js', 'TypeScript', 'REST APIs', 'PDF generation'],
     copy: {
       es: {
@@ -50,18 +54,20 @@ export const projects: Project[] = [
     },
   },
   {
-    id: 'white-label', number: '03', color: 'bg-brand-cyan',
-    tech: ['React', 'Vue', 'TypeScript', 'Tailwind CSS'],
+    id: 'pass-generator', number: '03', color: 'bg-brand-cyan',
+    url: 'https://password.raydev.com.mx/',
+    practice: true,
+    tech: ['TypeScript', 'Astro'],
     copy: {
       es: {
-        title: 'White-label UI (Sistemas Multi-Marca)', shortTitle: 'White-label UI',
-        type: 'Arquitectura de producto', role: 'Frontend engineer',
-        description: 'Sistemas de temas para Mikrosystem, WispHub y BrandUp con conmutación dinámica de marcas y una base visual escalable.',
+        title: 'Pass Generator', shortTitle: 'Pass Generator',
+        type: 'Proyecto de práctica', role: 'Desarrollo web',
+        description: 'Generador de contraseñas desarrollado como práctica con TypeScript y Astro.',
       },
       en: {
-        title: 'White-label UI (Multi-Brand Systems)', shortTitle: 'White-label UI',
-        type: 'Product architecture', role: 'Frontend engineer',
-        description: 'Theming systems for Mikrosystem, WispHub and BrandUp with dynamic brand switching and a scalable visual foundation.',
+        title: 'Pass Generator', shortTitle: 'Pass Generator',
+        type: 'Practice project', role: 'Web development',
+        description: 'Password generator built as a practice project with TypeScript and Astro.',
       },
     },
   },

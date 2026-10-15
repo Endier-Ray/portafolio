@@ -9,7 +9,7 @@ const t = messages[Astro.props.locale].footer;
   <Brand label={t.home} />
   <p class="text-center text-[13px] text-muted max-[760px]:text-left">{t.copyright}</p>
   <div class="flex flex-wrap items-center justify-end gap-4 font-display text-[13px] font-bold tracking-[1px] uppercase max-[760px]:justify-start">
-    <SocialLinks locale={Astro.props.locale} />
+    <SocialLinks locale={Astro.props.locale} iconsOnly />
     <a class="text-link inline-flex min-h-11 items-center" href="#inicio">{t.start}</a>
   </div>
 </footer>

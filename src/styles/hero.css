@@ -1,33 +1,35 @@
-/* Fotografia, contraste y bloques decorativos de la portada y el perfil. */
-.hero-photo, .hero-shade { position: absolute; inset: 0; }
-.hero-photo {
-  background-image: url("https://images.unsplash.com/photo-1579820010410-c10411aaaa88?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=1800");
-  background-position: center 42%;
-  background-size: cover;
-  filter: grayscale(1) contrast(1.1);
-  animation: hero-breathe 24s ease-in-out infinite alternate;
+/* Reticula tecnica original para dar textura sin distraer del contenido. */
+.hero-pattern, .hero-shade { position: absolute; inset: 0; }
+.hero-pattern {
+  background-color: #282c2b;
+  background-image:
+    radial-gradient(ellipse at 72% 36%, rgb(80 120 242 / 14%), transparent 48%),
+    linear-gradient(to right, rgb(255 255 255 / 5%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 5%) 1px, transparent 1px),
+    linear-gradient(to right, rgb(102 212 229 / 11%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(102 212 229 / 11%) 1px, transparent 1px);
+  background-size: auto, 48px 48px, 48px 48px, 192px 192px, 192px 192px;
 }
 .hero-shade {
   background:
-    linear-gradient(0deg, rgb(10 13 12 / 84%), rgb(10 13 12 / 56%)),
-    linear-gradient(90deg, rgb(10 13 12 / 72%) 0%, rgb(10 13 12 / 38%) 58%, rgb(10 13 12 / 45%));
+    linear-gradient(90deg, rgb(10 13 12 / 40%) 0%, rgb(10 13 12 / 12%) 68%, rgb(10 13 12 / 24%)),
+    linear-gradient(0deg, rgb(10 13 12 / 36%), transparent 68%);
 }
 .hero-reveal > * { opacity: 0; transform: translateY(10px); animation: hero-copy-in var(--duration-reveal) var(--ease-soft) forwards; }
 .hero-reveal > :nth-child(2) { animation-delay: 100ms; }
 .hero-reveal > :nth-child(3) { animation-delay: 220ms; }
 .hero-reveal > :nth-child(4) { animation-delay: 340ms; }
 .shape { position: absolute; z-index: 1; pointer-events: none; }
-.shape-blue-one { right: 8%; bottom: -50px; width: 50px; height: 180px; background: var(--blue); animation: float-vertical 7s ease-in-out infinite alternate; }
-.shape-lilac-one { right: 0; bottom: 0; width: 13%; height: 150px; background: var(--lilac); animation: float-horizontal 9s ease-in-out infinite alternate; }
-.shape-cyan-one { right: 13%; bottom: 0; width: 95px; height: 48px; background: var(--cyan); animation: float-vertical 6s ease-in-out 800ms infinite alternate-reverse; }
-.shape-coral-one { bottom: 0; left: 0; width: 55px; height: 105px; background: var(--coral); animation: float-horizontal 8s ease-in-out 400ms infinite alternate; }
 .shape-lilac-two { top: 0; left: 9%; width: 45px; height: 45px; background: var(--lilac); animation: float-vertical 8s ease-in-out infinite alternate; }
 .shape-blue-two { right: 4%; bottom: 0; width: 82px; height: 34px; background: var(--blue); animation: float-horizontal 7s ease-in-out infinite alternate-reverse; }
 
 @media (max-width: 760px) {
-  .hero-photo { background-position: 42% center; }
-  .hero-shade { background: linear-gradient(0deg, rgb(10 13 12 / 96%) 5%, rgb(10 13 12 / 35%) 75%); }
-  .shape-cyan-one { display: none; }
-  .shape-lilac-one { width: 70px; height: 70px; }
-  .shape-blue-one { right: 70px; bottom: 0; width: 38px; height: 105px; }
+  .hero-pattern {
+    background-size: auto, 36px 36px, 36px 36px, 144px 144px, 144px 144px;
+  }
+  .hero-shade {
+    background:
+      linear-gradient(0deg, rgb(10 13 12 / 48%) 5%, rgb(10 13 12 / 12%) 75%),
+      linear-gradient(90deg, rgb(10 13 12 / 22%), transparent 75%);
+  }
 }

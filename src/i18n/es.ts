@@ -33,10 +33,23 @@ export const es = {
     responsibilities: 'Áreas de responsabilidad', fullstack: 'Desarrollo frontend y backend',
     ui: 'Arquitectura de bases de datos y sistemas white-label',
     operations: 'Performance, seguridad y despliegue de infraestructura',
+    bustum: {
+      period: 'Sep 2023 - Oct 2024', role: 'Encargado de Departamento Web',
+      title: 'Desarrollo web, infraestructura y rendimiento.',
+      details: 'Tiempo completo · Zapopan, Jalisco · Híbrido',
+      description: 'Desarrollo y mantenimiento de sitios web para clientes de la agencia, combinando personalización de WordPress, administración de servidores y optimización de rendimiento.',
+      highlights: [
+        'Creación de sitios con HTML, JavaScript, CSS y SASS; extensión de funcionalidades de WordPress con PHP y JavaScript.',
+        'Administración y monitoreo de servidores VPS, migraciones web, gestión de zonas DNS e implementación de Cloudflare como CDN.',
+        'Reducción del 30% en los tiempos de respuesta mediante estrategias de caché y optimización de entrega de contenido (WPO).',
+        'Soporte técnico a clientes y elaboración de reportes semanales de proyectos y servidores, y mensuales de rendimiento de infraestructura.',
+      ],
+      areas: ['Desarrollo web y WordPress', 'VPS, DNS y migraciones', 'WPO y soporte técnico'],
+    },
   },
   projects: {
     label: 'Proyectos seleccionados', heading: 'TRABAJO CON', impact: 'IMPACTO REAL.',
-    technologies: 'Tecnologías usadas en', featured: 'Caso destacado', overview: 'Vista general',
+    technologies: 'Tecnologías usadas en', featured: 'Caso destacado', practice: 'Proyecto de práctica', visit: 'Visitar sitio',
   },
   skills: {
     label: 'Stack tecnológico', heading: 'HERRAMIENTAS PARA', layers: 'CADA CAPA.',
@@ -45,8 +58,15 @@ export const es = {
   education: {
     label: 'Formación', learn: 'APRENDER.', apply: 'APLICAR.', evolve: 'EVOLUCIONAR.',
     ongoing: 'En curso', degree: 'Ingeniería en Sistemas / Computación',
-    university: 'UTEL Universidad', continuous: 'Formación continua',
-    course: 'UX, arquitectura de información y datos', sources: 'Coursera · DataDigest · Proyectos prácticos',
+    university: 'UTEL Universidad',
+    certification: {
+      status: 'Completado', type: 'Certificado de especialización',
+      title: 'UI / UX Design', provider: 'California Institute of the Arts · Coursera',
+      date: '28 de septiembre de 2026',
+      description: 'Especialización de cuatro cursos en diseño de interfaces, fundamentos de UX, arquitectura de información y prototipado web.',
+      coursesLabel: '4 cursos completados', visit: 'Ver certificado',
+      courses: ['Elementos visuales del diseño de interfaces', 'Fundamentos de diseño UX', 'Estrategia y arquitectura de información', 'De wireframes a prototipos'],
+    },
   },
   contact: {
     label: 'Disponible para colaborar', heading: 'HAGAMOS ALGO', works: 'QUE FUNCIONE.',

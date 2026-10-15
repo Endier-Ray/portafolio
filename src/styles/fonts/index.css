@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('./Inter.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('./Rajdhani.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: optional;
+}

@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://raydev.com.mx',
   i18n: {
     locales: ['es', 'en'],
     defaultLocale: 'es',

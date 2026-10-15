@@ -14,7 +14,7 @@ const t = messages[locale].skills;
     <h2 class={largeSectionHeadingClass}>{t.heading}<br />{t.layers}</h2>
     <p class="mt-[35px] max-w-[480px] text-xl leading-[1.6]">{t.description}</p>
   </div>
-  <div class="skill-grid grid grid-cols-2 gap-3 max-[760px]:grid-cols-1">
+  <div class="skill-grid grid grid-cols-2 gap-3 max-[760px]:grid-cols-1 [&>article:last-child:nth-child(odd)]:col-span-full">
     {skillGroups.map((group) => <SkillCard group={group} locale={locale} />)}
   </div>
 </section>

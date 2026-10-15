@@ -7,7 +7,6 @@
 
 /* Solo opacidad: revelar una tarjeta no compite con su estado hover ni mueve texto. */
 @keyframes section-reveal { from { opacity: 0; } to { opacity: 1; } }
-@keyframes hero-breathe { from { transform: scale(1); } to { transform: scale(1.02); } }
 @keyframes hero-copy-in { to { opacity: 1; transform: translateY(0); } }
 @keyframes float-vertical { from { transform: translateY(-3px); } to { transform: translateY(3px); } }
 @keyframes float-horizontal { from { transform: translateX(-3px); } to { transform: translateX(3px); } }
@@ -20,6 +19,6 @@
     transition-duration: 0.01ms !important;
   }
   .reveal-ready [data-reveal], .hero-reveal > * { animation: none !important; opacity: 1 !important; transform: none !important; }
-  .hero-photo, .shape { animation: none !important; }
+  .shape { animation: none !important; }
   .action-arrow { transform: none !important; }
 }

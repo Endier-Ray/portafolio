@@ -9,7 +9,7 @@ const t = messages[Astro.props.locale].hero;
 ---
 <!-- Presentacion principal y acceso directo a las secciones. -->
 <section class="relative min-h-[860px] overflow-hidden bg-[#282c2b] text-white max-[760px]:min-h-[820px]" id="inicio">
-  <div class="hero-photo" role="img" aria-label={t.image}></div>
+  <div class="hero-pattern" aria-hidden="true"></div>
   <div class="hero-shade" aria-hidden="true"></div>
   <div class="hero-reveal relative z-[2] mx-auto w-[min(1120px,calc(100%_-_48px))] pt-[205px] text-left max-[760px]:w-auto max-[760px]:px-6 max-[760px]:pt-[360px] max-[760px]:pb-[150px]">
     <p class={kickerClass}>{t.role}</p>
@@ -24,9 +24,5 @@ const t = messages[Astro.props.locale].hero;
     <div class="mt-6">
       <SocialLinks locale={Astro.props.locale} iconsOnly />
     </div>
-  </div>
-  <div aria-hidden="true">
-    <div class="shape shape-blue-one"></div><div class="shape shape-lilac-one"></div>
-    <div class="shape shape-cyan-one"></div><div class="shape shape-coral-one"></div>
   </div>
 </section>

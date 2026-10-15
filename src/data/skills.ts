@@ -68,4 +68,15 @@ export const skillGroups: SkillGroup[] = [
       { name: 'Visual Studio', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg' },
     ],
   },
+  {
+    number: '05', accent: 'before:bg-brand-blue',
+    copy: {
+      es: { title: 'Desarrollo asistido por IA', description: 'Uso GitHub Copilot y Gemini para explorar soluciones, apoyar la escritura de código y agilizar la documentación, con revisión y validación propias.' },
+      en: { title: 'AI-assisted development', description: 'I use GitHub Copilot and Gemini to explore solutions, assist with coding and streamline documentation, reviewing and validating the results myself.' },
+    },
+    items: [
+      { name: 'GitHub Copilot', icon: 'githubcopilot' },
+      { name: 'Gemini', icon: 'googlegemini' },
+    ],
+  },
 ];

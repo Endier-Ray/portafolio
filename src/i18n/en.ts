@@ -34,10 +34,23 @@ export const en: Messages = {
     responsibilities: 'Areas of responsibility', fullstack: 'Frontend and backend development',
     ui: 'Database architecture and white-label systems',
     operations: 'Performance, security and infrastructure deployment',
+    bustum: {
+      period: 'Sep 2023 - Oct 2024', role: 'Web Department Lead',
+      title: 'Web development, infrastructure and performance.',
+      details: 'Full-time · Zapopan, Jalisco, Mexico · Hybrid',
+      description: 'Developed and maintained websites for agency clients, combining WordPress customization, server administration and performance optimization.',
+      highlights: [
+        'Built websites with HTML, JavaScript, CSS and SASS; extended WordPress functionality with PHP and JavaScript.',
+        'Administered and monitored VPS servers, handled website migrations and DNS zones, and implemented Cloudflare as a CDN.',
+        'Reduced response times by 30% through caching strategies and web performance optimization (WPO).',
+        'Provided technical client support and produced weekly project and server reports, plus monthly infrastructure performance reports.',
+      ],
+      areas: ['Web development and WordPress', 'VPS, DNS and migrations', 'WPO and technical support'],
+    },
   },
   projects: {
     label: 'Selected projects', heading: 'WORK WITH', impact: 'REAL IMPACT.',
-    technologies: 'Technologies used in', featured: 'Featured case', overview: 'Overview',
+    technologies: 'Technologies used in', featured: 'Featured case', practice: 'Practice project', visit: 'Visit site',
   },
   skills: {
     label: 'Technology stack', heading: 'TOOLS FOR', layers: 'EVERY LAYER.',
@@ -46,8 +59,15 @@ export const en: Messages = {
   education: {
     label: 'Education', learn: 'LEARN.', apply: 'APPLY.', evolve: 'EVOLVE.',
     ongoing: 'In progress', degree: 'Systems / Computer Engineering',
-    university: 'UTEL University', continuous: 'Continuing education',
-    course: 'UX, information architecture and data', sources: 'Coursera · DataDigest · Hands-on projects',
+    university: 'UTEL University',
+    certification: {
+      status: 'Completed', type: 'Specialization certificate',
+      title: 'UI / UX Design', provider: 'California Institute of the Arts · Coursera',
+      date: 'September 28, 2026',
+      description: 'Four-course specialization in interface design, UX fundamentals, information architecture and web prototyping.',
+      coursesLabel: '4 courses completed', visit: 'View certificate',
+      courses: ['Visual Elements of User Interface Design', 'UX Design Fundamentals', 'Web Design: Strategy and Information Architecture', 'Web Design: Wireframes to Prototypes'],
+    },
   },
   contact: {
     label: 'Available to collaborate', heading: 'LET’S MAKE SOMETHING', works: 'THAT WORKS.',

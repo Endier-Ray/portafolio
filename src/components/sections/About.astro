@@ -2,7 +2,6 @@
 import { messages, type LocaleProps } from '../../i18n';
 import { kickerClass } from '../../styles/classes';
 import ArrowIcon from '../ui/ArrowIcon.astro';
-import SocialLinks from '../ui/SocialLinks.astro';
 interface Props extends LocaleProps {}
 const t = messages[Astro.props.locale].about;
 const highlights = [
@@ -36,7 +35,6 @@ const highlights = [
         <a class="group text-link inline-flex items-center gap-[18px] border-b-2 border-ink pb-1.5 font-display font-bold" href="#experiencia">
           {t.trajectory}<ArrowIcon />
         </a>
-        <SocialLinks locale={Astro.props.locale} />
       </div>
     </div>
   </div>
